@@ -1199,21 +1199,25 @@ a.contact-detail-value:hover { color: var(--blue-primary); }
 
   /* ── Slide-in panel ── */
   .nav-links {
+    display: flex !important;
     position: fixed;
     top: 0;
     right: 0;
-    bottom: 0;
     width: min(85vw, 360px);
+    height: 100vh;
+    height: 100dvh;
     z-index: 999;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 0;
-    padding: 7rem 2.5rem 3rem;
+    padding: 2.5rem;
     background: var(--white);
     box-shadow: -8px 0 30px rgba(0, 0, 0, 0.08);
     transform: translateX(100%);
     visibility: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
                 visibility 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }

@@ -34,13 +34,17 @@ window.addEventListener(
 
 // ─── Mobile menu toggle ───
 const mobileToggle = document.querySelector(".nav-mobile-toggle");
+function setScrollLock(lock) {
+  document.body.style.overflow = lock ? "hidden" : "";
+  document.documentElement.style.overflow = lock ? "hidden" : "";
+}
 function closeMobileMenu() {
   nav.classList.remove("open");
-  document.body.style.overflow = "";
+  setScrollLock(false);
 }
 mobileToggle.addEventListener("click", () => {
   const isOpen = nav.classList.toggle("open");
-  document.body.style.overflow = isOpen ? "hidden" : "";
+  setScrollLock(isOpen);
 });
 document.querySelectorAll(".nav-links a").forEach((a) => {
   a.addEventListener("click", closeMobileMenu);
