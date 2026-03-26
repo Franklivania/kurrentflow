@@ -1,0 +1,1581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kurrent Flow Enterprises — Premium Building Materials & Plumbing Supply</title>
+<meta name="description" content="Kurrent Flow Enterprises: Sourcing and supplying trusted building materials, plumbing systems, sanitary ware, and tools across Lagos and beyond.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --blue-primary: #0C5C9E;
+  --blue-accent: #157CC7;
+  --blue-deep: #083D6B;
+  --blue-pale: #E8F1F8;
+  --blue-mist: #F4F8FC;
+  --white: #FFFFFF;
+  --off-white: #FAFBFC;
+  --warm-gray: #F5F4F2;
+  --gray-100: #F0EFED;
+  --gray-200: #E2E0DC;
+  --gray-300: #C4C1BB;
+  --gray-400: #9B9790;
+  --gray-500: #706C65;
+  --gray-600: #524E48;
+  --gray-700: #3A3732;
+  --gray-800: #252320;
+  --gray-900: #1A1816;
+  --serif: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+  --sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-out: cubic-bezier(0.0, 0.0, 0.2, 1);
+  --duration: 0.6s;
+  --duration-fast: 0.3s;
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--sans);
+  color: var(--gray-800);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ─── UTILITY ─── */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 3rem);
+}
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); border: 0;
+}
+
+/* ─── REVEAL ANIMATION ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity var(--duration) var(--ease-smooth), transform var(--duration) var(--ease-smooth);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ─── BUTTONS ─── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.9375rem 2rem;
+  font-family: var(--sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: var(--blue-primary);
+  color: var(--white);
+}
+.btn-primary:hover {
+  background: var(--blue-deep);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--gray-800);
+  border: 1.5px solid var(--gray-800);
+}
+.btn-secondary:hover {
+  background: var(--gray-800);
+  color: var(--white);
+}
+
+.btn-white {
+  background: var(--white);
+  color: var(--blue-primary);
+}
+.btn-white:hover {
+  background: var(--blue-pale);
+}
+
+.btn-outline-white {
+  background: transparent;
+  color: var(--white);
+  border: 1.5px solid rgba(255,255,255,0.5);
+}
+.btn-outline-white:hover {
+  background: var(--white);
+  color: var(--blue-primary);
+  border-color: var(--white);
+}
+
+.btn-arrow::after {
+  content: '→';
+  transition: transform var(--duration-fast) var(--ease-smooth);
+}
+.btn-arrow:hover::after {
+  transform: translateX(4px);
+}
+
+/* ─── SECTION LABEL ─── */
+.section-label {
+  font-family: var(--sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blue-accent);
+  margin-bottom: 1.25rem;
+}
+
+.section-label-light { color: rgba(255,255,255,0.6); }
+
+/* ─── TYPOGRAPHY ─── */
+.heading-xl {
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 5.5vw, 4.25rem);
+  line-height: 1.08;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--gray-900);
+}
+
+.heading-lg {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.12;
+  font-weight: 400;
+  color: var(--gray-900);
+}
+
+.heading-md {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  line-height: 1.2;
+  font-weight: 400;
+  color: var(--gray-900);
+}
+
+.heading-sm {
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--gray-800);
+}
+
+.body-lg {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--gray-500);
+  font-weight: 300;
+}
+
+.body-md {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--gray-500);
+  font-weight: 400;
+}
+
+/* ─── NAV ─── */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all var(--duration-fast) var(--ease-smooth);
+  background: transparent;
+}
+.nav.scrolled {
+  background: rgba(255,255,255,0.97);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 5rem;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--white);
+  transition: color var(--duration-fast) var(--ease-smooth);
+}
+.nav.scrolled .nav-logo { color: var(--gray-900); }
+
+.nav-logo-mark {
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 400;
+  border: 1.5px solid currentColor;
+  transition: all var(--duration-fast) var(--ease-smooth);
+}
+
+.nav-logo-text {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  color: rgba(255,255,255,0.8);
+  transition: color var(--duration-fast) var(--ease-smooth);
+  text-transform: uppercase;
+}
+.nav.scrolled .nav-links a { color: var(--gray-500); }
+.nav-links a:hover { color: var(--white); }
+.nav.scrolled .nav-links a:hover { color: var(--gray-900); }
+
+.nav-cta {
+  padding: 0.625rem 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1.5px solid rgba(255,255,255,0.4);
+  color: var(--white);
+  transition: all var(--duration-fast) var(--ease-smooth);
+}
+.nav.scrolled .nav-cta {
+  border-color: var(--blue-primary);
+  color: var(--blue-primary);
+}
+.nav-cta:hover {
+  background: var(--white);
+  color: var(--blue-primary);
+  border-color: var(--white);
+}
+.nav.scrolled .nav-cta:hover {
+  background: var(--blue-primary);
+  color: var(--white);
+}
+
+.nav-mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+.nav-mobile-toggle span {
+  display: block;
+  width: 1.5rem;
+  height: 1.5px;
+  background: var(--white);
+  margin: 5px 0;
+  transition: all var(--duration-fast) var(--ease-smooth);
+}
+.nav.scrolled .nav-mobile-toggle span { background: var(--gray-800); }
+
+/* ─── HERO ─── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: clamp(4rem, 8vh, 7rem);
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(165deg, var(--blue-deep) 0%, var(--blue-primary) 45%, #1a7ec2 100%);
+  z-index: 0;
+}
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 80% 20%, rgba(21,124,199,0.4) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 80% at 20% 80%, rgba(8,61,107,0.5) 0%, transparent 70%);
+}
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to top, rgba(8,61,107,0.3), transparent);
+}
+
+.hero-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 80px 80px;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+}
+
+.hero-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s var(--ease-out) 0.3s forwards;
+}
+
+.hero-heading {
+  font-family: var(--serif);
+  font-size: clamp(2.75rem, 6vw, 4.75rem);
+  line-height: 1.05;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 1.75rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s var(--ease-out) 0.5s forwards;
+}
+
+.hero-body {
+  font-size: clamp(1rem, 1.5vw, 1.1875rem);
+  line-height: 1.7;
+  color: rgba(255,255,255,0.65);
+  font-weight: 300;
+  max-width: 560px;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s var(--ease-out) 0.7s forwards;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s var(--ease-out) 0.9s forwards;
+}
+
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  right: clamp(1.25rem, 4vw, 3rem);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  opacity: 0;
+  animation: fadeUp 0.8s var(--ease-out) 1.2s forwards;
+}
+.hero-scroll-indicator span {
+  font-size: 0.625rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  writing-mode: vertical-rl;
+}
+.hero-scroll-line {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+/* ─── TRUST STRIP ─── */
+.trust-strip {
+  background: var(--gray-900);
+  padding: 0;
+  overflow: hidden;
+}
+.trust-strip-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.trust-item {
+  padding: 1.75rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-right: 1px solid rgba(255,255,255,0.06);
+  transition: background var(--duration-fast) var(--ease-smooth);
+}
+.trust-item:last-child { border-right: none; }
+.trust-item:hover { background: rgba(255,255,255,0.03); }
+
+.trust-icon {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.trust-icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  stroke: var(--blue-accent);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.trust-text {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+
+/* ─── WHAT WE DO ─── */
+.what-we-do {
+  padding: clamp(5rem, 10vh, 8rem) 0;
+  background: var(--white);
+}
+
+.wwd-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: end;
+  margin-bottom: clamp(3.5rem, 6vh, 5rem);
+}
+
+.wwd-header .heading-lg { color: var(--gray-900); }
+
+.wwd-header-body {
+  max-width: 480px;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--gray-200);
+  border: 1px solid var(--gray-200);
+}
+
+.category-card {
+  background: var(--white);
+  padding: clamp(2rem, 3vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+  transition: all var(--duration) var(--ease-smooth);
+  position: relative;
+  overflow: hidden;
+}
+.category-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--blue-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--duration) var(--ease-smooth);
+}
+.category-card:hover::after { transform: scaleX(1); }
+.category-card:hover { background: var(--blue-mist); }
+
+.category-icon {
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue-primary);
+}
+.category-icon svg {
+  width: 2rem;
+  height: 2rem;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.category-card .heading-sm { margin-bottom: 1rem; }
+
+.category-desc {
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--gray-400);
+  font-weight: 300;
+  flex-grow: 1;
+}
+
+.category-link {
+  margin-top: 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--blue-primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: gap var(--duration-fast) var(--ease-smooth);
+}
+.category-link:hover { gap: 0.75rem; }
+
+/* ─── VALUE PROPOSITION ─── */
+.value-prop {
+  padding: clamp(5rem, 10vh, 8rem) 0;
+  background: var(--warm-gray);
+}
+
+.vp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 6vw, 6rem);
+  align-items: center;
+}
+
+.vp-content .heading-lg { margin-bottom: 1.5rem; }
+.vp-content .body-lg { margin-bottom: 2.5rem; }
+
+.vp-features {
+  display: grid;
+  gap: 0;
+}
+
+.vp-feature {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--gray-200);
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.vp-feature:first-child { border-top: 1px solid var(--gray-200); }
+
+.vp-check {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.125rem;
+  color: var(--blue-accent);
+}
+.vp-check svg { width: 100%; height: 100%; stroke: currentColor; fill: none; stroke-width: 2; }
+
+.vp-feature-text {
+  font-size: 0.9375rem;
+  color: var(--gray-700);
+  font-weight: 400;
+}
+
+.vp-visual {
+  position: relative;
+  aspect-ratio: 4/5;
+  background:
+    linear-gradient(135deg, var(--blue-primary) 0%, var(--blue-deep) 100%);
+  overflow: hidden;
+}
+.vp-visual-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,1) 39px, rgba(255,255,255,1) 40px),
+    repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,1) 39px, rgba(255,255,255,1) 40px);
+}
+.vp-visual-text {
+  position: absolute;
+  bottom: 3rem;
+  left: 3rem;
+  right: 3rem;
+}
+.vp-visual-text .heading-md {
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+.vp-visual-text p {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* ─── HOW IT WORKS ─── */
+.how-it-works {
+  padding: clamp(5rem, 10vh, 8rem) 0;
+  background: var(--white);
+}
+
+.hiw-header {
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto clamp(3.5rem, 6vh, 5rem);
+}
+.hiw-header .heading-lg { margin-bottom: 1rem; }
+
+.hiw-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+}
+.hiw-steps::before {
+  content: '';
+  position: absolute;
+  top: 2.25rem;
+  left: 12.5%;
+  right: 12.5%;
+  height: 1px;
+  background: var(--gray-200);
+}
+
+.hiw-step {
+  text-align: center;
+  padding: 0 1.5rem;
+  position: relative;
+}
+
+.hiw-step-number {
+  width: 3.5rem;
+  height: 3.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  color: var(--blue-primary);
+  border: 1.5px solid var(--blue-accent);
+  background: var(--white);
+  margin-bottom: 1.75rem;
+  position: relative;
+  z-index: 1;
+  transition: all var(--duration-fast) var(--ease-smooth);
+}
+.hiw-step:hover .hiw-step-number {
+  background: var(--blue-primary);
+  color: var(--white);
+  border-color: var(--blue-primary);
+}
+
+.hiw-step .heading-sm { margin-bottom: 0.75rem; }
+.hiw-step .body-md { font-size: 0.875rem; }
+
+.hiw-footer {
+  text-align: center;
+  margin-top: 3.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--gray-200);
+}
+.hiw-footer p {
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  color: var(--gray-700);
+  font-style: italic;
+}
+
+/* ─── SOURCING ─── */
+.sourcing {
+  padding: clamp(5rem, 10vh, 8rem) 0;
+  background: var(--blue-primary);
+  position: relative;
+  overflow: hidden;
+}
+.sourcing::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 80%;
+  height: 200%;
+  background: radial-gradient(ellipse, rgba(21,124,199,0.3) 0%, transparent 70%);
+}
+
+.sourcing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 6vw, 6rem);
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.sourcing-content .heading-lg {
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+.sourcing-body {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.6);
+  font-weight: 300;
+  margin-bottom: 2.5rem;
+}
+
+.sourcing-cases {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.sourcing-case {
+  padding: 1.5rem;
+  background: rgba(255,255,255,0.03);
+  transition: background var(--duration-fast) var(--ease-smooth);
+}
+.sourcing-case:hover { background: rgba(255,255,255,0.08); }
+
+.sourcing-case-title {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 0.375rem;
+}
+.sourcing-case-desc {
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.4);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+/* ─── WHO WE SERVE ─── */
+.who-we-serve {
+  padding: clamp(5rem, 10vh, 8rem) 0;
+  background: var(--white);
+}
+
+.wws-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 6vw, 6rem);
+  align-items: start;
+}
+
+.wws-content .heading-lg { margin-bottom: 1.5rem; }
+.wws-content .body-lg { margin-bottom: 2.5rem; }
+
+.wws-audiences {
+  display: grid;
+  gap: 0;
+}
+.wws-audience {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--gray-200);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+.wws-audience:first-child { padding-top: 0; }
+
+.wws-num {
+  font-family: var(--serif);
+  font-size: 1.75rem;
+  color: var(--blue-accent);
+  line-height: 1;
+  margin-top: 0.25rem;
+}
+.wws-audience-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  margin-bottom: 0.25rem;
+}
+.wws-audience-desc {
+  font-size: 0.875rem;
+  color: var(--gray-400);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.wws-visual {
+  background: var(--warm-gray);
+  padding: clamp(2.5rem, 4vw, 4rem);
+}
+.wws-visual-inner {
+  border: 1px solid var(--gray-200);
+  padding: clamp(2rem, 3vw, 3rem);
+  background: var(--white);
+}
+.wws-stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.wws-stat {}
+.wws-stat-number {
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  color: var(--blue-primary);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.wws-stat-label {
+  font-size: 0.8125rem;
+  color: var(--gray-400);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+}
+.wws-stat-divider {
+  grid-column: 1 / -1;
+  height: 1px;
+  background: var(--gray-200);
+}
+
+/* ─── VISION/MISSION ─── */
+.vision-mission {
+  padding: clamp(5rem, 10vh, 8rem) 0;
+  background: var(--gray-900);
+}
+.vm-grid {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: clamp(2.5rem, 4vw, 4rem);
+  align-items: start;
+}
+.vm-divider {
+  background: rgba(255,255,255,0.1);
+  align-self: stretch;
+}
+.vm-card .section-label { color: rgba(255,255,255,0.35); }
+.vm-card .heading-md {
+  color: var(--white);
+  margin-bottom: 1.25rem;
+}
+.vm-card p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.5);
+  font-weight: 300;
+}
+
+/* ─── CONTACT / CTA ─── */
+.contact-cta {
+  padding: clamp(5rem, 10vh, 8rem) 0;
+  background: var(--white);
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--gray-200);
+  border: 1px solid var(--gray-200);
+}
+
+.contact-info {
+  background: var(--white);
+  padding: clamp(2.5rem, 4vw, 4rem);
+}
+.contact-info .heading-lg { margin-bottom: 2rem; }
+
+.contact-details {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+.contact-detail {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.contact-detail-icon {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--blue-accent);
+  margin-top: 0.125rem;
+}
+.contact-detail-icon svg { width: 100%; height: 100%; stroke: currentColor; fill: none; stroke-width: 1.5; }
+.contact-detail-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gray-400);
+  margin-bottom: 0.25rem;
+}
+.contact-detail-value {
+  font-size: 1rem;
+  color: var(--gray-700);
+  font-weight: 400;
+  text-decoration: none;
+}
+a.contact-detail-value:hover { color: var(--blue-primary); }
+
+.contact-cta-panel {
+  background: var(--blue-primary);
+  padding: clamp(2.5rem, 4vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.contact-cta-panel::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -30%;
+  width: 100%;
+  height: 200%;
+  background: radial-gradient(ellipse, rgba(21,124,199,0.3) 0%, transparent 60%);
+}
+.contact-cta-panel > * { position: relative; z-index: 1; }
+.contact-cta-panel .heading-lg {
+  color: var(--white);
+  margin-bottom: 1.25rem;
+}
+.contact-cta-panel p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.6);
+  font-weight: 300;
+  margin-bottom: 2.5rem;
+}
+.contact-cta-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ─── FOOTER ─── */
+.footer {
+  background: var(--gray-900);
+  padding: 3.5rem 0 2rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-brand-desc {
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.4);
+  font-weight: 300;
+  margin-top: 1.25rem;
+  max-width: 320px;
+}
+
+.footer-col-title {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 1.25rem;
+}
+
+.footer-links {
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
+}
+.footer-links a {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-smooth);
+}
+.footer-links a:hover { color: var(--white); }
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-copyright {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.25);
+}
+
+.footer-socials {
+  display: flex;
+  gap: 1.25rem;
+}
+.footer-socials a {
+  color: rgba(255,255,255,0.3);
+  transition: color var(--duration-fast) var(--ease-smooth);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.footer-socials a:hover { color: var(--white); }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1024px) {
+  .wwd-header { grid-template-columns: 1fr; gap: 1.5rem; }
+  .categories-grid { grid-template-columns: repeat(2, 1fr); }
+  .vp-grid, .sourcing-grid, .wws-grid { grid-template-columns: 1fr; }
+  .vp-visual { aspect-ratio: 16/9; }
+  .vm-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .vm-divider { display: none; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .hiw-steps { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+  .hiw-steps::before { display: none; }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
+  .nav-mobile-toggle { display: block; }
+  .trust-strip-inner { grid-template-columns: repeat(2, 1fr); }
+  .trust-item { padding: 1.25rem 1rem; }
+  .categories-grid { grid-template-columns: 1fr; }
+  .category-card { min-height: auto; }
+  .hiw-steps { grid-template-columns: 1fr; }
+  .sourcing-cases { grid-template-columns: 1fr; }
+  .wws-stat-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .wws-stat-divider { display: none; }
+  .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+  .hero-scroll-indicator { display: none; }
+  .contact-cta-actions { flex-direction: column; }
+  .contact-cta-actions .btn { text-align: center; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+  .trust-strip-inner { grid-template-columns: 1fr; }
+  .hero-actions { flex-direction: column; }
+  .hero-actions .btn { text-align: center; justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <div class="nav-logo-mark">KF</div>
+        <span class="nav-logo-text">Kurrent Flow</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="https://wa.me/2349127626420?text=Hello%2C%20I%27d%20like%20to%20request%20a%20quote." class="nav-cta">Request a Quote</a>
+      <button class="nav-mobile-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid-overlay"></div>
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <p class="hero-label">Building Materials &amp; Plumbing Supply — Lagos, Nigeria</p>
+      <h1 class="hero-heading">Reliable Supply for Every Stage of Construction</h1>
+      <p class="hero-body">From plumbing systems to finishing fixtures, Kurrent Flow delivers trusted building materials, sanitary solutions, and tools — sourced and supplied without compromise.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/2349127626420?text=Hello%2C%20I%27d%20like%20to%20request%20a%20quote." class="btn btn-white btn-arrow">Request a Quote</a>
+        <a href="#products" class="btn btn-outline-white btn-arrow">View Products</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll-indicator">
+    <span>Scroll</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
+
+<!-- ═══ TRUST STRIP ═══ -->
+<section class="trust-strip">
+  <div class="trust-strip-inner">
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <span class="trust-text">Trusted by builders and developers across Lagos</span>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24"><rect x="1" y="6" width="22" height="12" rx="2"/><path d="M1 10h22"/></svg>
+      </div>
+      <span class="trust-text">Bulk delivery available</span>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
+      <span class="trust-text">Verified quality products only</span>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <span class="trust-text">Fast sourcing and fulfillment</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHAT WE DO ═══ -->
+<section class="what-we-do" id="products">
+  <div class="container">
+    <div class="wwd-header reveal">
+      <div>
+        <p class="section-label">What We Supply</p>
+        <h2 class="heading-lg">End-to-End Supply for Construction Projects</h2>
+      </div>
+      <div class="wwd-header-body">
+        <p class="body-lg">From core infrastructure to finishing details, we ensure you get the right products, at the right time, without delays or uncertainty.</p>
+      </div>
+    </div>
+    <div class="categories-grid">
+      <div class="category-card reveal reveal-delay-1">
+        <div class="category-icon">
+          <svg viewBox="0 0 24 24"><path d="M6 6h.01M6 18h.01M12 6h.01M12 18h.01M18 6h.01M18 18h.01"/><path d="M3 12h18M12 3v18"/><rect x="3" y="3" width="18" height="18" rx="1"/></svg>
+        </div>
+        <h3 class="heading-sm">Plumbing Systems</h3>
+        <p class="category-desc">Pipes, fittings, valves, and complete water flow solutions for residential and commercial installations.</p>
+        <a href="#" class="category-link">Explore <span>→</span></a>
+      </div>
+      <div class="category-card reveal reveal-delay-2">
+        <div class="category-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 17V9"/><path d="M11 17V5"/><path d="M15 17v-4"/><path d="M19 17v-8"/></svg>
+        </div>
+        <h3 class="heading-sm">Sanitary Ware</h3>
+        <p class="category-desc">Toilets, basins, sink units, and bathroom fixtures built for durability and modern aesthetics.</p>
+        <a href="#" class="category-link">Explore <span>→</span></a>
+      </div>
+      <div class="category-card reveal reveal-delay-3">
+        <div class="category-icon">
+          <svg viewBox="0 0 24 24"><path d="M2 20h20"/><path d="M5 20V7l7-4 7 4v13"/><path d="M9 20v-5h6v5"/></svg>
+        </div>
+        <h3 class="heading-sm">Building Materials</h3>
+        <p class="category-desc">Core construction supplies for structural and finishing work across all project scales.</p>
+        <a href="#" class="category-link">Explore <span>→</span></a>
+      </div>
+      <div class="category-card reveal reveal-delay-4">
+        <div class="category-icon">
+          <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3 class="heading-sm">Tools &amp; Equipment</h3>
+        <p class="category-desc">Professional-grade tools including drilling systems, installation gear, and site equipment.</p>
+        <a href="#" class="category-link">Explore <span>→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ VALUE PROPOSITION ═══ -->
+<section class="value-prop" id="about">
+  <div class="container">
+    <div class="vp-grid">
+      <div class="vp-content reveal">
+        <p class="section-label">Our Standard</p>
+        <h2 class="heading-lg">Built on Reliability, Not Promises</h2>
+        <p class="body-lg">In construction, delays and poor materials cost more than money — they cost time, trust, and project integrity. We operate with a single principle: deliver exactly what is needed, when it is needed.</p>
+        <div class="vp-features">
+          <div class="vp-feature">
+            <div class="vp-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span class="vp-feature-text">No substandard materials — every product is verified before dispatch</span>
+          </div>
+          <div class="vp-feature">
+            <div class="vp-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span class="vp-feature-text">Transparent pricing with no hidden costs or surcharges</span>
+          </div>
+          <div class="vp-feature">
+            <div class="vp-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span class="vp-feature-text">Consistent supply availability across all product categories</span>
+          </div>
+          <div class="vp-feature">
+            <div class="vp-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span class="vp-feature-text">Dependable delivery for bulk orders — free on qualifying purchases</span>
+          </div>
+        </div>
+      </div>
+      <div class="vp-visual reveal reveal-delay-2">
+        <div class="vp-visual-pattern"></div>
+        <div class="vp-visual-text">
+          <h3 class="heading-md">8+ Years</h3>
+          <p>Serving builders, contractors, and developers across Lagos since 2017.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOW IT WORKS ═══ -->
+<section class="how-it-works" id="process">
+  <div class="container">
+    <div class="hiw-header reveal">
+      <p class="section-label">How It Works</p>
+      <h2 class="heading-lg">Simple, Direct, Efficient</h2>
+    </div>
+    <div class="hiw-steps">
+      <div class="hiw-step reveal reveal-delay-1">
+        <div class="hiw-step-number">1</div>
+        <h3 class="heading-sm">Browse or Request</h3>
+        <p class="body-md">Explore available products or send your requirements directly via WhatsApp or phone.</p>
+      </div>
+      <div class="hiw-step reveal reveal-delay-2">
+        <div class="hiw-step-number">2</div>
+        <h3 class="heading-sm">Get a Quote</h3>
+        <p class="body-md">Receive clear pricing based on your order size and specifications.</p>
+      </div>
+      <div class="hiw-step reveal reveal-delay-3">
+        <div class="hiw-step-number">3</div>
+        <h3 class="heading-sm">Confirm Order</h3>
+        <p class="body-md">Secure your materials with fast processing and order confirmation.</p>
+      </div>
+      <div class="hiw-step reveal reveal-delay-4">
+        <div class="hiw-step-number">4</div>
+        <h3 class="heading-sm">Delivery or Pickup</h3>
+        <p class="body-md">Get your supplies delivered to site or ready for collection at our location.</p>
+      </div>
+    </div>
+    <div class="hiw-footer reveal">
+      <p>No unnecessary complexity — just reliable supply when you need it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SOURCING ═══ -->
+<section class="sourcing">
+  <div class="container">
+    <div class="sourcing-grid">
+      <div class="sourcing-content reveal">
+        <p class="section-label section-label-light">Procurement</p>
+        <h2 class="heading-lg" style="color: var(--white);">Beyond Inventory — We Source for You</h2>
+        <p class="sourcing-body">If what you need isn't readily available, we find it. We provide sourcing and shipping services for specialised materials, ensuring your project is never delayed by supply gaps.</p>
+        <a href="https://wa.me/2349127626420?text=Hello%2C%20I%20have%20a%20sourcing%20request." class="btn btn-white btn-arrow">Discuss Your Requirements</a>
+      </div>
+      <div class="sourcing-cases reveal reveal-delay-2">
+        <div class="sourcing-case">
+          <p class="sourcing-case-title">Large-Scale Projects</p>
+          <p class="sourcing-case-desc">Complete material packages for multi-unit developments</p>
+        </div>
+        <div class="sourcing-case">
+          <p class="sourcing-case-title">Custom Requests</p>
+          <p class="sourcing-case-desc">Specialised fixtures and non-standard specifications</p>
+        </div>
+        <div class="sourcing-case">
+          <p class="sourcing-case-title">Imported Products</p>
+          <p class="sourcing-case-desc">International tools and fixtures sourced to order</p>
+        </div>
+        <div class="sourcing-case">
+          <p class="sourcing-case-title">Bulk Procurement</p>
+          <p class="sourcing-case-desc">Volume planning and scheduled delivery programmes</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHO WE SERVE ═══ -->
+<section class="who-we-serve">
+  <div class="container">
+    <div class="wws-grid">
+      <div class="wws-content reveal">
+        <p class="section-label">Who We Work With</p>
+        <h2 class="heading-lg">From Foundation to Completion</h2>
+        <p class="body-lg">Whether you're building from the ground up or upgrading existing structures, we support your project from start to finish.</p>
+        <div class="wws-audiences">
+          <div class="wws-audience">
+            <span class="wws-num">01</span>
+            <div>
+              <p class="wws-audience-title">Real Estate Developers</p>
+              <p class="wws-audience-desc">Partnering on premium residential and commercial developments</p>
+            </div>
+          </div>
+          <div class="wws-audience">
+            <span class="wws-num">02</span>
+            <div>
+              <p class="wws-audience-title">Construction Companies</p>
+              <p class="wws-audience-desc">Reliable supply chains for ongoing project demands</p>
+            </div>
+          </div>
+          <div class="wws-audience">
+            <span class="wws-num">03</span>
+            <div>
+              <p class="wws-audience-title">Contractors &amp; Site Managers</p>
+              <p class="wws-audience-desc">Direct access to materials without procurement delays</p>
+            </div>
+          </div>
+          <div class="wws-audience">
+            <span class="wws-num">04</span>
+            <div>
+              <p class="wws-audience-title">Individual Builders</p>
+              <p class="wws-audience-desc">Quality products for personal construction and renovation projects</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wws-visual reveal reveal-delay-2">
+        <div class="wws-visual-inner">
+          <div class="wws-stat-grid">
+            <div class="wws-stat">
+              <p class="wws-stat-number">8+</p>
+              <p class="wws-stat-label">Years Active</p>
+            </div>
+            <div class="wws-stat">
+              <p class="wws-stat-number">4</p>
+              <p class="wws-stat-label">Product Lines</p>
+            </div>
+            <div class="wws-stat-divider"></div>
+            <div class="wws-stat">
+              <p class="wws-stat-number">Lagos</p>
+              <p class="wws-stat-label">Headquarters</p>
+            </div>
+            <div class="wws-stat">
+              <p class="wws-stat-number">24/7</p>
+              <p class="wws-stat-label">WhatsApp Support</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ VISION & MISSION ═══ -->
+<section class="vision-mission">
+  <div class="container">
+    <div class="vm-grid">
+      <div class="vm-card reveal">
+        <p class="section-label">Vision</p>
+        <h3 class="heading-md">A Trusted Supply Partner Across Nigeria</h3>
+        <p>To become the standard for reliable construction material supply — known for consistency, quality, and operational integrity across every project we serve.</p>
+      </div>
+      <div class="vm-divider"></div>
+      <div class="vm-card reveal reveal-delay-2">
+        <p class="section-label">Mission</p>
+        <h3 class="heading-md">Simplifying Access to Building Materials</h3>
+        <p>To bridge the gap between construction sites and quality materials through dependable sourcing, transparent pricing, and efficient delivery — making the supply chain invisible so builders can focus on building.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT / FINAL CTA ═══ -->
+<section class="contact-cta" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <p class="section-label">Get in Touch</p>
+        <h2 class="heading-lg">Visit or Contact Us</h2>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <div class="contact-detail-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <p class="contact-detail-label">Address</p>
+              <p class="contact-detail-value">287 Market Street, Amukoko<br>Lagos 102103, Nigeria</p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <p class="contact-detail-label">Phone / WhatsApp</p>
+              <a href="tel:+2349127626420" class="contact-detail-value">+234 912 762 6420</a>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <p class="contact-detail-label">Email</p>
+              <a href="mailto:kurrentflow192123@gmail.com" class="contact-detail-value">kurrentflow192123@gmail.com</a>
+            </div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="https://x.com/Kurrentflow_" class="btn btn-secondary btn-arrow" style="font-size: 0.75rem; padding: 0.625rem 1.25rem;">X / Twitter</a>
+          <a href="https://www.instagram.com/kurrentflow_/" class="btn btn-secondary btn-arrow" style="font-size: 0.75rem; padding: 0.625rem 1.25rem;">Instagram</a>
+          <a href="https://www.facebook.com/kurrentflow/" class="btn btn-secondary btn-arrow" style="font-size: 0.75rem; padding: 0.625rem 1.25rem;">Facebook</a>
+        </div>
+      </div>
+      <div class="contact-cta-panel reveal reveal-delay-2">
+        <h2 class="heading-lg">Get the Right Materials Without Delays</h2>
+        <p>Tell us what you need. We'll handle the rest — from sourcing to delivery. Speak directly with our team on WhatsApp for the fastest response.</p>
+        <div class="contact-cta-actions">
+          <a href="https://wa.me/2349127626420?text=Hello%2C%20I%27d%20like%20to%20request%20a%20quote." class="btn btn-white btn-arrow">Speak to Us Now</a>
+          <a href="mailto:kurrentflow192123@gmail.com?subject=Quote%20Request" class="btn btn-outline-white btn-arrow">Request via Email</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <a href="#" class="nav-logo" style="color: var(--white); margin-bottom: 0;">
+          <div class="nav-logo-mark">KF</div>
+          <span class="nav-logo-text">Kurrent Flow</span>
+        </a>
+        <p class="footer-brand-desc">Sourcing and supplying trusted building materials, plumbing systems, sanitary ware, and professional tools across Lagos and beyond.</p>
+      </div>
+      <div>
+        <p class="footer-col-title">Products</p>
+        <ul class="footer-links">
+          <li><a href="#">Plumbing Systems</a></li>
+          <li><a href="#">Sanitary Ware</a></li>
+          <li><a href="#">Building Materials</a></li>
+          <li><a href="#">Tools &amp; Equipment</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Company</p>
+        <ul class="footer-links">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#process">How It Works</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Connect</p>
+        <ul class="footer-links">
+          <li><a href="https://wa.me/2349127626420">WhatsApp</a></li>
+          <li><a href="https://x.com/Kurrentflow_">X / Twitter</a></li>
+          <li><a href="https://www.instagram.com/kurrentflow_/">Instagram</a></li>
+          <li><a href="https://www.facebook.com/kurrentflow/">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">&copy; 2026 Kurrent Flow Enterprises. All rights reserved. Lagos, Nigeria.</p>
+      <div class="footer-socials">
+        <a href="https://x.com/Kurrentflow_">X</a>
+        <a href="https://www.instagram.com/kurrentflow_/">IG</a>
+        <a href="https://www.facebook.com/kurrentflow/">FB</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ─── Scroll reveal ───
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ─── Nav scroll state ───
+const nav = document.getElementById('nav');
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  if (y > 60) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+  lastScroll = y;
+}, { passive: true });
+
+// ─── Smooth scroll for anchor links ───
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
