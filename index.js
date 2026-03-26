@@ -32,6 +32,23 @@ window.addEventListener(
   { passive: true },
 );
 
+// ─── Mobile menu toggle ───
+const mobileToggle = document.querySelector(".nav-mobile-toggle");
+function closeMobileMenu() {
+  nav.classList.remove("open");
+  document.body.style.overflow = "";
+}
+mobileToggle.addEventListener("click", () => {
+  const isOpen = nav.classList.toggle("open");
+  document.body.style.overflow = isOpen ? "hidden" : "";
+});
+document.querySelectorAll(".nav-links a").forEach((a) => {
+  a.addEventListener("click", closeMobileMenu);
+});
+nav.addEventListener("click", (e) => {
+  if (e.target === nav && nav.classList.contains("open")) closeMobileMenu();
+});
+
 // ─── Smooth scroll for anchor links ───
 document.querySelectorAll('a[href^="#"]').forEach((a) => {
   a.addEventListener("click", (e) => {
